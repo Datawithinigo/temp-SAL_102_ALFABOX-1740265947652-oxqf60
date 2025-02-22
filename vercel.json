@@ -1,0 +1,36 @@
+{
+    "redirects": [
+      {
+        "source": "/index.html",
+        "destination": "/",
+        "permanent": true
+      },
+      {
+        "source": "/index.php",
+        "destination": "/",
+        "permanent": true
+      },
+      {
+        "source": "/:path*",
+        "has": [
+          {
+            "type": "host",
+            "value": "www.alfabox.es"
+          }
+        ],
+        "destination": "https://alfabox.es/:path*",
+        "permanent": true
+      }
+    ],
+    "headers": [
+      {
+        "source": "/:path*",
+        "headers": [
+          {
+            "key": "Strict-Transport-Security",
+            "value": "max-age=31536000; includeSubDomains"
+          }
+        ]
+      }
+    ]
+  }
